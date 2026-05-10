@@ -12,7 +12,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/causal_toolkit_pmathew.git
+git clone https://github.com/prinupmathew/causal_toolkit_pmathew.git
 cd causal_toolkit_pmathew
 uv pip install -e .
 python -m uv pip install -e .
