@@ -1,5 +1,7 @@
 # causal_toolkit_pmathew
 
+[![Tests](https://github.com/prinupmathew/causal_toolkit_pmathew/workflows/Tests/badge.svg)](https://github.com/prinupmathew/causal_toolkit_pmathew/actions)
+
 `causal_toolkit_pmathew` packages the course implementations from Weeks 02 through 05 into an installable causal inference toolkit.
 
 ## Package contents
@@ -23,6 +25,12 @@ python -m uv pip install -e .
 ```bash
 uv run pytest
 python -m uv run pytest
+```
+
+## Run pytest module with coverage
+
+```bash
+python -m pytest tests/ -v --cov=causal_toolkit_pmathew --cov-report=term-missing
 ```
 
 ## Usage
