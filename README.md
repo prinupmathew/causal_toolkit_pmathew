@@ -4,7 +4,7 @@
 [![Publish to PyPI](https://github.com/prinupmathew/causal_toolkit_pmathew/actions/workflows/publish.yml/badge.svg)](https://github.com/prinupmathew/causal_toolkit_pmathew/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/causal-toolkit-pmathew.svg)](https://pypi.org/project/causal-toolkit-pmathew/)
 
-`causal_toolkit_pmathew` packages the course implementations from Weeks 02 through 05 into an installable causal inference toolkit.
+`causal_toolkit_pmathew` packages the causal implementations into an installable causal inference toolkit.
 
 ## Package contents
 
