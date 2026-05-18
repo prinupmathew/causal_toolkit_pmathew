@@ -1,6 +1,8 @@
 # causal_toolkit_pmathew
 
 [![Tests](https://github.com/prinupmathew/causal_toolkit_pmathew/workflows/Tests/badge.svg)](https://github.com/prinupmathew/causal_toolkit_pmathew/actions)
+[![Publish to PyPI](https://github.com/prinupmathew/causal_toolkit_pmathew/actions/workflows/publish.yml/badge.svg)](https://github.com/prinupmathew/causal_toolkit_pmathew/actions/workflows/publish.yml)
+[![PyPI version](https://badge.fury.io/py/causal-toolkit-pmathew.svg)](https://pypi.org/project/causal-toolkit-pmathew/)
 
 `causal_toolkit_pmathew` packages the course implementations from Weeks 02 through 05 into an installable causal inference toolkit.
 
@@ -14,6 +16,10 @@
 ## Installation
 
 ```bash
+# Install from PyPI
+pip install causal_toolkit_pmathew
+
+# Or install from source
 git clone https://github.com/prinupmathew/causal_toolkit_pmathew.git
 cd causal_toolkit_pmathew
 uv pip install -e .
@@ -32,6 +38,46 @@ python -m uv run pytest
 ```bash
 python -m pytest tests/ -v --cov=causal_toolkit_pmathew --cov-report=term-missing
 ```
+
+## Publish to PyPI
+
+- Create accounts:
+- Generate API tokens:
+	- Go to Account Settings → API tokens → Add token
+	- Scope: "Entire account"
+	- Save token securely (starts with pypi-)
+- Publish to PyPI:
+
+```bash
+python -m pip install --upgrade twine build
+
+# Set pypi credential locally in terminal (cmd)
+set TWINE_USERNAME=__token__
+set TWINE_PASSWORD=pypi-your-token-here
+
+# Set pypi credential locally in terminal (bash)
+export TWINE_USERNAME="__token__"
+export TWINE_PASSWORD="pypi-your-token-here"
+
+# Set pypi credential locally in terminal (powershell)
+$env:TWINE_USERNAME="__token__"
+$env:TWINE_PASSWORD="pypi-your-token-here"
+
+# Verify tests pass
+pytest tests/ -v
+
+# Clean and rebuild
+python -m build
+python -m twine check dist/*
+python -m twine upload dist/*
+
+```
+
+## Automated publishing (GitHub Release -> PyPI)
+
+1. Add repository secret `PYPI_API_TOKEN` in GitHub Actions settings.
+2. Create and publish a GitHub Release (for example tag `v0.1.1`).
+3. GitHub Actions workflow `publish.yml` builds and uploads to PyPI automatically.
 
 ## Usage
 
